@@ -187,9 +187,10 @@ class Student extends DbObject {
 	}
 
 	/**
-	 * @return bool
-	 * @throws InvalidSqlQueryException
-	 */
+         * 
+         * @return boolean
+         * @throws InvalidSqlQueryException
+         */
 	public function saveDB() {
 		if ($this->id > 0) {
 			$sql = '

@@ -38,7 +38,7 @@ if (isset($_GET['delete']) && intval($_GET['delete']) > 0) {
 if(!empty($_POST)) {
 	$cityId = isset($_POST['id']) ? intval($_POST['id']) : 0;
 	$countryId = isset($_POST['cou_id']) ? intval($_POST['cou_id']) : 0;
-    $cityName = isset($_POST['cit_name']) ? trim($_POST['cit_name']) : '';
+        $cityName = isset($_POST['cit_name']) ? trim($_POST['cit_name']) : '';
 
     if (!array_key_exists($countryId, $countriesList)) {
 		$conf->addError('Pays non valide');
@@ -50,8 +50,8 @@ if(!empty($_POST)) {
     // je remplis l'objet qui est lu pour les inputs du formulaire, ou pour l'ajout en DB
 	$cityObject = new City(
 		$cityId,
-		new Country($countryId),
-		$cityName
+		$cityName,
+                new Country($countryId)
 	);
     
     // Si tout est ok => en DB
